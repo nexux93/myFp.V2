@@ -116,7 +116,7 @@ const productTemplate = ({name, price}) => '<div class="item_block"><div class="
 const renderProduct = items => {
   let productHtml = items.map(productTemplate);
 
-  document.querySelector('#catalog-item').innerHTML = productHtml;
+  document.querySelector('#catalog-item').innerHTML = productHtml; // не срабатывает шаблон
 };
 
 renderProduct(productList);
