@@ -111,12 +111,80 @@ const productList = [
     }
 ];
 
-const productTemplate = ({name, price}) => '<div class="item_block"><div class="block_add"> <div class="add_item"> <span class="block_add_hover_text">Add to cart <img alt="" src= "img/add_img.svg"> </span> </div> </div> <div class="item_img"> <img alt="" src="img/Layer_4.jpg"> </div> <span class="item_text"></span> <span class="item_text item_span">${price}</span> </div>';
+function Container(id, className, tagName) {
+    this.id = id;
+    this.className = className;
+    this.tagName = tagName;
+}
 
-const renderProduct = items => {
-  let productHtml = items.map(productTemplate);
+Container.prototype.remove = function() {
 
-  document.querySelector('#catalog-item').innerHTML = productHtml; // не срабатывает шаблон
 };
 
-renderProduct(productList);
+Container.prototype.render = function() {
+    return `<${this.tagName} class="${this.className}" id="${this.id}"></${this.tagName}>`;
+};
+
+function Menu(id, className, items) {
+    Container.call(this, id, className, 'ul');
+
+    this.items = items;
+}
+
+Menu.prototype = Object.create(Container.prototype);
+Menu.prototype.render = function() {
+
+};
+
+function SuperMenu(id, className, items) {
+    Menu.call(id, className, items);
+}
+
+// -----------------------------------------------------------
+
+class Container {
+    constructor(id, className, tagName) {
+        this.id = id;
+        this.className = className;
+        this.tagName = tagName;
+    }
+
+    render() {
+        return `<${this.tagName} class="${this.className}" id="${this.id}"></${this.tagName}>`;
+    }
+}
+
+class Menu extends Container {
+    constructor(id, className, items) {
+        super(id, className, 'ul');
+
+        this.items = items;
+    }
+
+    render() {
+        super.render();
+    }
+}
+function Basket(id, className, items) {
+    Container.call(this, id, className, items);
+    this.items = items;
+}
+
+/** нужен будет метод удаления
+ * метод проверки товара на существование в корзине
+ * метод изменения кол-во товара
+ * метод добавления товара
+ */
+
+const summ = 0;
+
+function goodList(productList) {
+    productList.map(function(item){
+
+        let itemPrice = item.price;
+
+        summ = summ + itemPrice;
+
+    });
+    return summ;
+}
