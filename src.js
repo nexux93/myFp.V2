@@ -170,21 +170,28 @@ function Basket(id, className, items) {
     this.items = items;
 }
 
+Basket.prototype = Object.create(Container.prototype);
+
+Basket.prototype.render = function() {
+
+};
+
+class Basket extends Container {
+
+
+    summ() {
+        return this.items.reduce((acc, items)=> {
+            return acc + items.price;
+        }, 0)
+    }
+}
+
+
+
 /** нужен будет метод удаления
  * метод проверки товара на существование в корзине
  * метод изменения кол-во товара
  * метод добавления товара
  */
 
-const summ = 0;
 
-function goodList(productList) {
-    productList.map(function(item){
-
-        let itemPrice = item.price;
-
-        summ = summ + itemPrice;
-
-    });
-    return summ;
-}
