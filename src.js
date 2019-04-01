@@ -120,6 +120,17 @@ function Container(id, className, tagName) {
 Container.prototype.remove = function() {
 
 };
+Container.prototype.sendReq = function() {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', this.url); // настройка запроса
+    xhr.send();
+
+    xhr.onreadystatechange = () => {
+        if(xhr.readyState === XMLHttpRequest.DONE) {
+            this.callback(JSON.parse(xhr.responseText));
+        }
+    }
+};
 
 Container.prototype.render = function() {
     return `<${this.tagName} class="${this.className}" id="${this.id}"></${this.tagName}>`;
@@ -175,6 +186,30 @@ Basket.prototype = Object.create(Container.prototype);
 Basket.prototype.render = function() {
 
 };
+
+class Item {
+    constructor(name, price, imgBig, imgSmall) {
+        this.name;
+        this.price;
+        this.imgBig;
+        this.imgSmall;
+    }
+    render() {
+        return `<div class="item_block"><div class="block_add"> <div class="add_item"> <span class="block_add_hover_text">Add to cart <img alt="" src= "img/add_img.svg"> </span> </div> </div> <div class="item_img"> <img alt="" src='${this.imgBig}'> </div> <span class="item_text"></span> <span class="item_text item_span">${price}</span> </div>'`
+    }
+}
+
+class ProductList extends Container{
+    constructor() {
+        this.items = [];
+    }
+    fetchItems(callback) {
+        sendRequest(`$(API_URL)/db.json`, (items) =>{
+            this.items = goods.map(item => new Item(goods.name, goods.price));
+            callback;
+        })
+    }
+}
 
 class Basket extends Container {
     summ() {
