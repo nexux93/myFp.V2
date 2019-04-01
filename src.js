@@ -177,12 +177,11 @@ Basket.prototype.render = function() {
 };
 
 class Basket extends Container {
-
-
     summ() {
-        return this.items.reduce((acc, items)=> {
-            return acc + items.price;
-        }, 0)
+        return this.items.reduce((acc, items)=>  acc + items.price, 0);
+    };
+    render() {
+
     }
 }
 
