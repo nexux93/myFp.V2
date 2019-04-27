@@ -6,6 +6,8 @@ const products = [
     {id: 5, title: 'Chair', price: 120},
 ];
 
+let prices = 0;
+
 const renderProduct = (title, price) => {
     return `
 <div class="item_block">
@@ -23,7 +25,40 @@ const renderPage = list => {
     document.querySelector('.products').innerHTML = productList;
 };
 
+const renderTotal = product => {
+    product.forEach(function (productItem) {
+        prices += productItem.price;
+    });
+    document.querySelector('.total').innerHTML = `<div>$ ${ prices }</div>`;
+};
+
+// const totalPrice = () => {
+//
+// };
 /**
  * запятая появляется после прохода map по элементу массива, как убрать не нашёл
  */
 renderPage(products);
+renderTotal(products);
+
+class ProductItem {
+
+}
+
+class Basket {
+
+}
+
+/**
+ * Для элемента товар:
+ * this.title; this.price;
+ * this.category;
+ *
+ * method - вывести товар в шаблоне, проверить на складе
+ *
+ * Для элемента Basket:
+ * extend ProductItem
+ *
+ * method - удалить товар, увеличить колличество товара, уменьшить колличество товара, добавить товар
+ *
+ */
