@@ -13,7 +13,7 @@
     <script src="../node_modules/jquery/dist/jquery.js"></script>
 
     <!--<script src="js-learn/test-6_1.js"></script>-->
-<!--    <script src="server.js"></script>-->
+    <!--    <script src="server.js"></script>-->
 
 
 </head>
@@ -43,25 +43,12 @@
                             </div>
                         </div>
                     </a>
-                    <input type="search" class="search_input" v-model="title" placeholder="Search for Item...">
-                    <div class="search_drop" v-show="title">
-                        <ul>
-<!--                            <li v-for="products in filterList">-->
-<!--                                {{ products.title }} - -->
-<!--                                {{ products.price }}$-->
-<!--                            </li>-->
-                        </ul>
-                    </div>
-                    <a href="#">
-                        <div class="search_btn">
-                            <img src="../img/search-button.png" alt="">
-                        </div>
-                    </a>
+<search ref="search"></search>
                 </form>
 
             </div>
             <div class="header-right">
-                <div class="card_img"  id="card">
+                <div class="card_img" id="card">
                     <cart ref="cart"></cart>
                 </div>
                 <div class="btn-pink" id="opener"><span class="white">My&nbsp;Account</span>
@@ -209,7 +196,7 @@
         </div>
     </div>
     <div class="container-items">
-      <catalog ref="catalog"></catalog>
+        <catalog ref="catalog"></catalog>
     </div>
     <div class="row-button">
         <a href="../catalog.html" class="btn-pink">
@@ -297,7 +284,8 @@ a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed p
         <div class="container-footer">
             <div class="footer_block_desc">
                 <div class="brand_footer_block">
-                    <a href="index.html" class="brand_name"><img class="logo_img" src="../img/Group_2.png" alt="">BRAN<span
+                    <a href="index.html" class="brand_name"><img class="logo_img" src="../img/Group_2.png"
+                                                                 alt="">BRAN<span
                             class="brand-d">D</span></a>
                 </div>
                 <span class="footer_desc_span">Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go&nbsp;forward benefits. Intrinsicly syndicate an&nbsp;expanded array of&nbsp;processes and cross-unit partnerships.

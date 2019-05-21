@@ -5,9 +5,15 @@ Vue.component('cart', {
             // cart_length: '',
             cartUrl: '/getBasket.json',
             cart_items: [],
-            deliteUrl: '/deleteFromBasket.json'
+            deliteUrl: '/deleteFromBasket.json',
         }
     },
+    computed:{
+     totalPrice(){
+         return this.cart_items.reduce((accum, cart_item) => accum += cart_item.price*cart_item.quantity, 0);
+     }
+    }
+    ,
     methods: {
         addToBasket(product) {
             this.$parent.getJson(`${API}/addToBasket.json`)
@@ -53,10 +59,11 @@ Vue.component('cart', {
 v-for="cart_item of cart_items"
 :key="cart_item.id"
 :cart_item="cart_item"
-@removeItem="removeItem"></cart_prod>
+@removeItem="removeItem"
+@totalPrice="totalPrice"></cart_prod>
                     <div class="card_product__totalPrice">
                         <span>TOTAL</span>
-                        <span></span>
+                        <span>{{totalPrice}}</span>
                     </div> 
                         <a href="../checkout.html" class="card_product__checkout pink_button_hover">checkout</a>
                         <a href="../Shopping_Cart.html" class="card_product__toCard btn_empty_grey empty_hover_button">Go to cart</a>

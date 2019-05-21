@@ -17,5 +17,4 @@ const vue = new Vue({
         },
 
     },
-
 });
