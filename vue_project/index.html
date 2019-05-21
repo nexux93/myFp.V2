@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="normalize.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../normalize.css"/>
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
           rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
 
     <!--<script src="js-learn/test-6_1.js"></script>-->
-    <script src="server.js"></script>
+<!--    <script src="server.js"></script>-->
 
 
 </head>
@@ -22,11 +22,11 @@
     <header>
         <div class="container-header">
             <div class="header_left">
-                <a href="index.html" class="brand_name"><img class="logo_img" src="img/Group_2.png" alt="">BRAN<span
+                <a href="index.html" class="brand_name"><img class="logo_img" src="../img/Group_2.png" alt="">BRAN<span
                         class="brand-d">D</span></a>
                 <form action="#" class="header_form">
                     <a class="btn_browse">Browse
-                        <div class="caret"><img src="img/caretca_grey.png" alt=""></div>
+                        <div class="caret"><img src="../img/caretca_grey.png" alt=""></div>
                         <div class="browse_drop_menu">
                             <div class="before"></div>
                             <div class="menu_content">
@@ -46,15 +46,15 @@
                     <input type="search" class="search_input" v-model="title" placeholder="Search for Item...">
                     <div class="search_drop" v-show="title">
                         <ul>
-                            <li v-for="products in filterList">
-                                {{ products.title }} -
-                                {{ products.price }}$
-                            </li>
+<!--                            <li v-for="products in filterList">-->
+<!--                                {{ products.title }} - -->
+<!--                                {{ products.price }}$-->
+<!--                            </li>-->
                         </ul>
                     </div>
                     <a href="#">
                         <div class="search_btn">
-                            <img src="img/search-button.png" alt="">
+                            <img src="../img/search-button.png" alt="">
                         </div>
                     </a>
                 </form>
@@ -62,42 +62,10 @@
             </div>
             <div class="header-right">
                 <div class="card_img"  id="card">
-                    <img src="img/Forma_1.svg" @click.self="show = !show" alt="">
-                    <div class="number"></div>
-                    <div class="card_product" v-show="show"  >
-                        <div class="card_product__item card_item" >
-                            <div class="card_item__img">
-                                <img alt="" src="img/card_item.jpg">
-                            </div>
-                            <div class="card_item__desc card_desc">
-                                <div class="card_desc__name">Бластерная винтовка DC-15A</div>
-                                <div class="card_desc__respect">
-                                    <img alt="" src="img/stars_respect.jpg">
-                                </div>
-                                <div class="card_desc__price">
-                                    <span class="card_desc__count" id="cart-1">1 x</span>
-                                    <span
-                                        class="card_desc__summ">5000</span>
-                                </div>
-                            </div>
-                            <div class="card_item__delete">
-                                <i class="fas fa-times-circle"></i>
-                                <i class="fas fa-plus-circle"></i>
-                                <i class="fas fa-minus-circle"></i>
-                            </div>
-                        </div>
-                        <div class="card_separator"></div>
-                        <div class="card_product__totalPrice">
-                            <span>TOTAL</span>
-                            <span>5000</span>
-                        </div>
-                        <a class="card_product__checkout pink_button_hover" href="checkout.html">checkout</a>
-                        <a class="card_product__toCard btn_empty_grey empty_hover_button" href="Shopping_Cart.html">Go
-                        to cart</a>
-                    </div>
+                    <cart ref="cart"></cart>
                 </div>
                 <div class="btn-pink" id="opener"><span class="white">My&nbsp;Account</span>
-                    <!--<div class="caret"><img src="img/caret.png" alt=""></div>-->
+                    <!--<div class="caret"><img src="../img/caret.png" alt=""></div>-->
                 </div>
 
             </div>
@@ -195,7 +163,7 @@
                     OF&nbsp;LUXERIOUS <span class="banner_text_span">FASHION</span>
                 </div>
             </div>
-            <img src="img/Layer_24.jpg" class="banner_img" alt="">
+            <img src="../img/Layer_24.jpg" class="banner_img" alt="">
         </div>
     </div>
     <div class="container_category">
@@ -205,14 +173,14 @@
                     HOT DEAL
                     <span class="man_text_span">FOR MEN</span>
                 </div>
-                <a href=""></a><img src="img/man.jpg" alt="">
+                <a href=""></a><img src="../img/man.jpg" alt="">
             </div>
             <div class="category_block_acces">
                 <div class="block_acces_text">
                     LUXIROUS &amp;&nbsp;trendy
                     <span class="acces_text_span">ACCESORIES</span>
                 </div>
-                <!--<a href=""></a><img src="img/acces.jpg" alt="">-->
+                <!--<a href=""></a><img src="../img/acces.jpg" alt="">-->
             </div>
         </div>
         <div class="category_coll">
@@ -221,7 +189,7 @@
                     30% offer
                     <span class="woman_text_span">WOMEN</span>
                 </div>
-                <a href=""></a><img src="img/woman.jpg" alt="">
+                <a href=""></a><img src="../img/woman.jpg" alt="">
             </div>
 
             <div class="category_block_kids">
@@ -229,7 +197,7 @@
                     NEW ARRIVALS
                     <span class="kids_text_span">FOR KIDS</span>
                 </div>
-                <a href=""></a><img src="img/kids.jpg" alt="">
+                <a href=""></a><img src="../img/kids.jpg" alt="">
             </div>
         </div>
     </div>
@@ -241,12 +209,10 @@
         </div>
     </div>
     <div class="container-items">
-        <div class="row-item" id="catalog-item">
-
-        </div>
+      <catalog ref="catalog"></catalog>
     </div>
     <div class="row-button">
-        <a href="catalog.html" class="btn-pink">
+        <a href="../catalog.html" class="btn-pink">
             Browse All Product
         </a>
     </div>
@@ -258,12 +224,12 @@
 </span>
                 <span class="sale_text_l2"> FOR WOMEN</span>
             </div>
-            <img class="sale_block_img" src="img/sale.jpg" alt="">
+            <img class="sale_block_img" src="../img/sale.jpg" alt="">
         </div>
         <div class="sale_block_desc">
             <div class="sale_block_desc_text">
                 <div class="sale_description_img">
-                    <img src="img/car_sale.svg" alt="">
+                    <img src="../img/car_sale.svg" alt="">
                 </div>
                 <div class="sale_description">
                     <span class="sale_desc_title">Free Delivery</span>
@@ -272,7 +238,7 @@
             </div>
             <div class="sale_block_desc_text">
                 <div class="sale_description_img">
-                    <img src="img/percent_sale.svg" alt="">
+                    <img src="../img/percent_sale.svg" alt="">
                 </div>
                 <div class="sale_description">
                     <span class="sale_desc_title">Sales &amp;&nbsp;discounts</span>
@@ -281,7 +247,7 @@
             </div>
             <div class="sale_block_desc_text">
                 <div class="sale_description_img">
-                    <img src="img/croun_sale.svg" alt="">
+                    <img src="../img/croun_sale.svg" alt="">
                 </div>
                 <div class="sale_description">
                     <span class="sale_desc_title">Quality assurance</span>
@@ -294,7 +260,7 @@
         <section class="response_block">
             <div class="response_block_left">
                 <div>
-                    <img src="img/response_face.png" alt="">
+                    <img src="../img/response_face.png" alt="">
                 </div>
                 <div class="response_text">
 <span>&laquo;Vestibulum quis porttitor dui! Quisque viverra nunc&nbsp;mi,
@@ -331,7 +297,7 @@ a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed p
         <div class="container-footer">
             <div class="footer_block_desc">
                 <div class="brand_footer_block">
-                    <a href="index.html" class="brand_name"><img class="logo_img" src="img/Group_2.png" alt="">BRAN<span
+                    <a href="index.html" class="brand_name"><img class="logo_img" src="../img/Group_2.png" alt="">BRAN<span
                             class="brand-d">D</span></a>
                 </div>
                 <span class="footer_desc_span">Objectively transition extensive data rather than cross functional solutions. Monotonectally syndicate multidisciplinary materials before go&nbsp;forward benefits. Intrinsicly syndicate an&nbsp;expanded array of&nbsp;processes and cross-unit partnerships.
@@ -432,6 +398,8 @@ a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed p
     </footer>
 </div>
 <script src="vue.js"></script>
+<script src="VueCart.js"></script>
+<script src="catalog.js"></script>
 <script src="vue.test.js">
 </script>
 
