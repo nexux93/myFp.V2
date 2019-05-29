@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Single Page</title>
-    <link rel="stylesheet" href="node_modules/owl.carousel2/dist/assets/owl.carousel.css">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="normalize.css"/>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="node_modules/jquery/dist/jquery.js"></script>
-
-
 </head>
 <body>
 <header>
@@ -163,6 +161,14 @@
         </ul>
     </nav>
 </header>
+<div class="container-catalog-product">
+    <section class="block_product">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+</div>
 <div class="catalog-land-block">
     <div class="container-land-block">
         <span class="catalog_land_title">NEW ARRIVALS</span>
@@ -174,96 +180,103 @@
 </span>
     </div>
 </div>
-<div class="single-container ">
-    <div class="owl-nav" id="nav-carousel"></div>
-    <div class="single-container__block single-block ">
+<div class="container_select_product">
+    <div class="select_product_title">
+        <div class="product_title_left">
+            <span>Product Details</span>
+        </div>
+        <div class="product_title_right">
+            <span class="product_title_item">Unite Price</span>
+            <span class="product_title_item">Quantity</span>
+            <span class="product_title_item">shipping</span>
+            <span class="product_title_item">Subtotal</span>
+            <span class="product_title_item">ACTION</span>
+        </div>
+    </div>
+    <div class="product_list">
+        <div class="product_list_row">
+            <div class="product_list_item">
+                <div class="product_list_item_left">
+                    <div><img src="img/product_item.jpg" alt=""></div>
+                    <div class="product_list_item_description">
 
-            <div class="owl-carousel owl-theme" id="carousel">
+                        <span class="product_name"><a href="Shopping_Cart.html" class="product_name_link">Mango People T-shirt </a></span>
 
+                        <span class="product_specification">Color: <span class="specification_concern">Red</span></span>
+                        <span class="product_specification">Size: <span class="specification_concern">Xll</span></span>
+                    </div>
+                </div>
+                <div class="product_list_item_right">
+                    <div class="description_block_item">$150</div>
+                    <div class="description_block_item">
+                        <input type="number" class="product_price_input">
+                    </div>
+                    <div class="description_block_item">
+                        FREE
+                    </div>
+                    <div class="description_block_item">$300</div>
+
+                    <div class="description_block_item"><a href="#"><i class="fas fa-times-circle"></i> </a></div>
+
+                </div>
             </div>
+        </div>
     </div>
 </div>
-<div class="flex-center pos-relative">
-    <div class="desc_single">
-        <div class="single_top">
-            <div class="single_title">
-                <span class="main_title"></span>
-                <div class="single-separator__2"></div>
-
-                <span class="second_title" id="productName"></span>
-            </div>
-            <div class="public_desc">Compellingly actualize fully researched processes before proactive outsourcing.
-                Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize
-                parallel core competencies rather than exceptional portals.
-            </div>
-            <div class="material">
-                <div class="material_name">MATERIAL: <span class="material_val" id="material"></span></div>
-                <div class="material_name">DESIGNER: <span class="material_val" id="manufacturer"></span></div>
-            </div>
-            <span class="price">$0</span>
-        </div>
-        <div class="single_bottom">
-            <form action="#" class="add_form">
-                <label for="color" class="label_title">CHOOSE COLOR
-                    <select type="text" id="color">
-                    </select>
-                </label>
-                <label for="size" class="label_title">CHOOSE SIZE
-                    <select type="text" id="size">
-
-                    </select>
-                </label>
-                <label for="QUANTITY" class="label_title">QUANTITY
-                    <input type="number" min="1" id="QUANTITY">
-                </label>
-            </form>
-            <button type="button" class="empty_add_cart singleAddButton empty_hover_button"><img src="img/cart_pink.svg" alt="">Add to&nbsp;Cart</button>
-
-        </div>
-
+<div class="container_row_button">
+    <div class="container_button">
+        <a href="#" class="product_btn_clear empty_hover_button">
+            CLEAR SHOPPING CART
+        </a>
+        <a href="#" class="product_btn_continue empty_hover_button">
+            CONTINUE SHOPPING
+        </a>
     </div>
 </div>
-<div class="container-items-title">
-    <div class="single-item_title">
-        <span>YOU MAY LIKE ALSO</span>
-    </div>
-</div>
-<div class="container-items">
-
-    <div class="row-item">
-        <div class="item_block">
-
-            <div>
-                <img src="img/single1.jpg" class="single-item_img" alt="">
+<div class="container_delivery">
+    <div class="delivery_block">
+        <div class="delivery_item">
+            <span class="delivery_title">Shipping Adress</span>
+            <div class="delivery_form">
+                <form action="#">
+                    <input type="text" id="town" class="delivery_input" placeholder="Bangladesh">
+                    <input type="text" id="state" class="delivery_input" placeholder="State">
+                    <input type="text" id="postcode" class="delivery_input" placeholder="Postcode / Zip">
+                    <a href="">
+                        <div class="adress_btn empty_hover_button">
+                            get a&nbsp;quote
+                        </div>
+                    </a>
+                </form>
             </div>
-            <span class="item_text">BLAZE LEGGINGS</span>
-            <span class="item_text item_span">$52.00</span>
         </div>
-        <div class="item_block">
-
-            <div>
-                <img src="img/single2.jpg" class="single-item_img" alt="">
+        <div class="coupon_item">
+            <span class="delivery_title">coupon discount</span>
+            <span class="coupon_second_title">Enter your coupon code if&nbsp;you have one</span>
+            <input type="text" class="delivery_input" placeholder="State">
+            <a href="">
+                <div class="coupon_btn empty_hover_button">
+                    Apply coupon
+                </div>
+            </a>
+        </div>
+        <div class="total_price">
+            <div class="total_prise_field">
+                Sub total
+                <span class="price_field_one" id="subTotal">$0
+</span>
             </div>
-            <span class="item_text">ALEXA SWEATER</span>
-            <span class="item_text item_span">$52.00</span>
-        </div>
-        <div class="item_block">
-
-            <div>
-                <img src="img/single3.jpg" class="single-item_img" alt="">
+            <div class="grand_total_prise_field">
+                GRAND TOTAL
+                <span class="price_field_two" id="grandTotal">$0
+</span>
             </div>
-            <span class="item_text">AGNES TOP</span>
-            <span class="item_text item_span">$52.00</span>
-        </div>
-        <div class="item_block">
+            <div class="grand_separator"></div>
 
-            <div>
-                <img src="img/single4.jpg" class="single-item_img" alt="">
-            </div>
-            <span class="item_text">SYLVA SWEATER</span>
-            <span class="item_text item_span">$52.00</span>
+                <div class="checkout_btn pink_button_hover">
+                    proceed to&nbsp;checkout
+                </div>
         </div>
-
     </div>
 </div>
 <div class="container-response">
@@ -406,8 +419,6 @@ a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed p
         </div>
     </div>
 </footer>
+<script src="shopingCart.js"></script>
 </body>
-<script src="single_script.js"></script>
-<script src="node_modules/owl.carousel2/dist/owl.carousel.js"></script>
-<script src="carousel_option.js"></script>
 </html>

@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Shopping Cart</title>
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="node_modules/jquery-ui-dist/jquery-ui.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="normalize.css"/>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
           rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/jquery-ui-dist/jquery-ui.js"></script>
+
 </head>
 <body>
 <header>
@@ -160,14 +164,6 @@
         </ul>
     </nav>
 </header>
-<div class="container-catalog-product">
-    <section class="block_product">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </section>
-</div>
 <div class="catalog-land-block">
     <div class="container-land-block">
         <span class="catalog_land_title">NEW ARRIVALS</span>
@@ -179,103 +175,224 @@
 </span>
     </div>
 </div>
-<div class="container_select_product">
-    <div class="select_product_title">
-        <div class="product_title_left">
-            <span>Product Details</span>
-        </div>
-        <div class="product_title_right">
-            <span class="product_title_item">Unite Price</span>
-            <span class="product_title_item">Quantity</span>
-            <span class="product_title_item">shipping</span>
-            <span class="product_title_item">Subtotal</span>
-            <span class="product_title_item">ACTION</span>
-        </div>
-    </div>
-    <div class="product_list">
-        <div class="product_list_row">
-            <div class="product_list_item">
-                <div class="product_list_item_left">
-                    <div><img src="img/product_item.jpg" alt=""></div>
-                    <div class="product_list_item_description">
+<div class="checkout">
+    <div class="checkout__container ">
+        <div class="check_list">
+            <h2>01. SHIPPING ADRESS</h2>
+            <div class="check_list__container list_container" id="check-one">
+                <div class="list_container__left list_left">
 
-                        <span class="product_name"><a href="Shopping_Cart.html" class="product_name_link">Mango People T-shirt </a></span>
+                    <span class="list_left__bold">Check as a guest or register</span>
+                    <span class="list_left__light">Register with us for future convenience</span>
+                    <form action="" class="list_left__form list_left">
 
-                        <span class="product_specification">Color: <span class="specification_concern">Red</span></span>
-                        <span class="product_specification">Size: <span class="specification_concern">Xll</span></span>
-                    </div>
+
+                        <label for="Check" class="list_left__bold radio_butt">
+                            <input type="radio" name="check" id="Check" value="checkout">
+                            <div id="check1">
+                                <div></div>
+                            </div>
+                            checkout as guest
+                        </label>
+
+
+                        <label for="reg" class="list_left__bold radio_butt">
+                            <input type="radio" id="reg" name="check" value="register">
+                            <div id="check2">
+                                <div></div>
+                            </div>
+                            register
+                        </label>
+                    </form>
+                    <span class="list_left__bold">
+                    register and save time!
+                </span>
+                    <span class="list_left__light">
+Register with us for future convenience
+                </span>
+                    <span class="list_left__light marg-top">
+<i class="fas fa-angle-double-right"></i> Fast and easy checkout
+                </span>
+                    <span class="list_left__light">
+<i class="fas fa-angle-double-right"></i> Easy access to your order history and status
+                </span>
+                    <button class="btn_empty_grey empty_hover_button list_left__next" id="12">
+                        Continue
+                    </button>
+
                 </div>
-                <div class="product_list_item_right">
-                    <div class="description_block_item">$150</div>
-                    <div class="description_block_item">
-                        <input type="number" class="product_price_input">
-                    </div>
-                    <div class="description_block_item">
-                        FREE
-                    </div>
-                    <div class="description_block_item">$300</div>
+                <!--<div class="list_container__right list_right">-->
+                    <!--<span class="list_right__bold">Already registed?</span>-->
+                    <!--<span class="list_right__light">Please log in below</span>-->
+                    <!--<form action="" class="list_right__form right_form">-->
+                        <!--<label for="email" class="right_form__email">EMAIL ADDRESS <span class="red">*</span></label>-->
+                        <!--<input type="text" id="email" class="right_form_email">-->
+                        <!--<label for="password" class="right_form__password">PASSWORD <span class="red">*</span></label>-->
+                        <!--<input type="text" id="password">-->
+                        <!--<span class="red right_form__required">* Required Fileds</span>-->
+                        <!--<div class="right_form__login form_login">-->
+                            <!--<a href="#" class="btn_empty_grey empty_hover_button list_right__login form_login__btn"-->
+                               <!--type="">Log in</a>-->
+                            <!--<span class="list_left__bold"><a href="#"-->
+                                                             <!--class="right_form__forgot">Forgot Password ?</a></span>-->
+                        <!--</div>-->
+                    <!--</form>-->
 
-                    <div class="description_block_item"><a href="#"><i class="fas fa-times-circle"></i> </a></div>
+                <!--</div>-->
+            </div>
+            <div class="check_list__separator"></div>
+        </div>
+        <div class="check_list">
+            <h2>02. BILLING INFORMATION</h2>
+            <div class="check_list__container check list_container">
+                <div class="list_container__left list_left">
 
+                    <span class="list_left__bold">Check as a guest or register</span>
+                    <span class="list_left__light">Register with us for future convenience</span>
+
+                    <span class="list_left__bold">
+                    register and save time!
+                </span>
+                    <span class="list_left__light">
+Register with us for future convenience
+                </span>
+                    <span class="list_left__light marg-top">
+<i class="fas fa-angle-double-right"></i> Fast and easy checkout
+                </span>
+                    <span class="list_left__light">
+<i class="fas fa-angle-double-right"></i> Easy access to your order history and status
+                </span>
+                    <button class="btn_empty_grey empty_hover_button list_left__next" id="122">
+                        Continue
+                    </button>
+                    <button class="btn_empty_grey empty_hover_button list_left__back">
+                        Back
+                    </button>
                 </div>
             </div>
+            <div class="check_list__separator"></div>
         </div>
-    </div>
-</div>
-<div class="container_row_button">
-    <div class="container_button">
-        <a href="#" class="product_btn_clear empty_hover_button">
-            CLEAR SHOPPING CART
-        </a>
-        <a href="#" class="product_btn_continue empty_hover_button">
-            CONTINUE SHOPPING
-        </a>
-    </div>
-</div>
-<div class="container_delivery">
-    <div class="delivery_block">
-        <div class="delivery_item">
-            <span class="delivery_title">Shipping Adress</span>
-            <div class="delivery_form">
-                <form action="#">
-                    <input type="text" id="town" class="delivery_input" placeholder="Bangladesh">
-                    <input type="text" id="state" class="delivery_input" placeholder="State">
-                    <input type="text" id="postcode" class="delivery_input" placeholder="Postcode / Zip">
-                    <a href="">
-                        <div class="adress_btn empty_hover_button">
-                            get a&nbsp;quote
-                        </div>
-                    </a>
-                </form>
-            </div>
-        </div>
-        <div class="coupon_item">
-            <span class="delivery_title">coupon discount</span>
-            <span class="coupon_second_title">Enter your coupon code if&nbsp;you have one</span>
-            <input type="text" class="delivery_input" placeholder="State">
-            <a href="">
-                <div class="coupon_btn empty_hover_button">
-                    Apply coupon
-                </div>
-            </a>
-        </div>
-        <div class="total_price">
-            <div class="total_prise_field">
-                Sub total
-                <span class="price_field_one" id="subTotal">$0
-</span>
-            </div>
-            <div class="grand_total_prise_field">
-                GRAND TOTAL
-                <span class="price_field_two" id="grandTotal">$0
-</span>
-            </div>
-            <div class="grand_separator"></div>
+        <div class="check_list">
+            <h2>03. SHIPPING INFORMATION</h2>
+            <div class="check_list__container check list_container">
+            <div class="list_container__left list_left">
 
-                <div class="checkout_btn pink_button_hover">
-                    proceed to&nbsp;checkout
-                </div>
+                <span class="list_left__bold">Check as a guest or register</span>
+                <span class="list_left__light">Register with us for future convenience</span>
+
+                <span class="list_left__bold">
+                    register and save time!
+                </span>
+                <span class="list_left__light">
+Register with us for future convenience
+                </span>
+                <span class="list_left__light marg-top">
+<i class="fas fa-angle-double-right"></i> Fast and easy checkout
+                </span>
+                <span class="list_left__light">
+<i class="fas fa-angle-double-right"></i> Easy access to your order history and status
+                </span>
+                <button class="btn_empty_grey empty_hover_button list_left__next">
+                    Continue
+                </button>
+                <button class="btn_empty_grey empty_hover_button list_left__back">
+                    Back
+                </button>
+            </div>
         </div>
+            <div class="check_list__separator"></div>
+        </div>
+        <div class="check_list">
+            <h2>04. SHIPPING METHOD</h2>
+             <div class="check_list__container check list_container">
+            <div class="list_container__left list_left">
+
+                <span class="list_left__bold">Check as a guest or register</span>
+                <span class="list_left__light">Register with us for future convenience</span>
+
+                <span class="list_left__bold">
+                    register and save time!
+                </span>
+                <span class="list_left__light">
+Register with us for future convenience
+                </span>
+                <span class="list_left__light marg-top">
+<i class="fas fa-angle-double-right"></i> Fast and easy checkout
+                </span>
+                <span class="list_left__light">
+<i class="fas fa-angle-double-right"></i> Easy access to your order history and status
+                </span>
+                <button class="btn_empty_grey empty_hover_button list_left__next">
+                    Continue
+                </button>
+                <button class="btn_empty_grey empty_hover_button list_left__back">
+                    Back
+                </button>
+            </div>
+        </div>
+            <div class="check_list__separator"></div>
+        </div>
+        <div class="check_list">
+            <h2>05. PAYMENT METHOD</h2>
+             <div class="check_list__container check list_container">
+            <div class="list_container__left list_left">
+
+                <span class="list_left__bold">Check as a guest or register</span>
+                <span class="list_left__light">Register with us for future convenience</span>
+
+                <span class="list_left__bold">
+                    register and save time!
+                </span>
+                <span class="list_left__light">
+Register with us for future convenience
+                </span>
+                <span class="list_left__light marg-top">
+<i class="fas fa-angle-double-right"></i> Fast and easy checkout
+                </span>
+                <span class="list_left__light">
+<i class="fas fa-angle-double-right"></i> Easy access to your order history and status
+                </span>
+                <button class="btn_empty_grey empty_hover_button list_left__next">
+                    Continue
+                </button>
+                <button class="btn_empty_grey empty_hover_button list_left__back">
+                    Back
+                </button>
+            </div>
+        </div>
+            <div class="check_list__separator"></div>
+        </div>
+        <div class="check_list">
+            <h2>06. ORDER REVIEW</h2>
+             <div class="check_list__container check list_container">
+            <div class="list_container__left list_left">
+
+                <span class="list_left__bold">Check as a guest or register</span>
+                <span class="list_left__light">Register with us for future convenience</span>
+
+                <span class="list_left__bold">
+                    register and save time!
+                </span>
+                <span class="list_left__light">
+Register with us for future convenience
+                </span>
+                <span class="list_left__light marg-top">
+<i class="fas fa-angle-double-right"></i> Fast and easy checkout
+                </span>
+                <span class="list_left__light">
+<i class="fas fa-angle-double-right"></i> Easy access to your order history and status
+                </span>
+                <button class="btn_empty_grey empty_hover_button list_left__next">
+                    Continue
+                </button>
+                <button class="btn_empty_grey empty_hover_button list_left__back">
+                    Back
+                </button>
+            </div>
+        </div>
+            <div class="check_list__separator"></div>
+        </div>
+
     </div>
 </div>
 <div class="container-response">
@@ -390,7 +507,7 @@ a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed p
 
 
                     <li><a href="" class="footer_link">Brows All</a></li>
-
+                    .
                 </ul>
             </nav>
         </div>
@@ -418,6 +535,11 @@ a&nbsp;pulvinar purus condimentum&nbsp;a. Aliquam condimentum mattis neque sed p
         </div>
     </div>
 </footer>
-<script src="shopingCart.js"></script>
+<script src="js-script.js">
+</script>
 </body>
 </html>
+
+
+
+

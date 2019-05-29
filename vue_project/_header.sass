@@ -38,6 +38,7 @@ header
   display: flex
   align-items: center
   margin-left: 37px
+  position: relative
 
 .btn_browse
   width: 90px
@@ -68,7 +69,7 @@ header
 
 .search_input
   width: 320px
-  height: 41px
+  height: 39px
   border: 1px solid #e6e6e6
   background-color: #ffffff
   box-sizing: border-box
@@ -93,11 +94,11 @@ header
 
 
 .card_product
-  display: none
   flex-direction: column
   cursor: default
   position: absolute
   top: 50px
+  transition: 0.5s
   left: -18px
   width: 262px
   box-sizing: border-box
@@ -355,4 +356,13 @@ header
   border-radius: 41px
   justify-content: center
 
-
+.search_drop
+  position: absolute
+  background-color: #ffffff
+  border: #ececec solid 1px
+  border-radius: 5px
+  width: -webkit-fill-available
+  height: auto
+  top: 45px
+  z-index: 1
+  left: 90px
