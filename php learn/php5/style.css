@@ -1,0 +1,13 @@
+.small_img{
+    max-width: 300px;
+    width: 200px;
+}
+.big-img{
+    max-width: 800px;
+    width: 800px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}

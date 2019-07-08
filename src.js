@@ -111,12 +111,133 @@ const productList = [
     }
 ];
 
-const productTemplate = ({name, price}) => '<div class="item_block"><div class="block_add"> <div class="add_item"> <span class="block_add_hover_text">Add to cart <img alt="" src= "img/add_img.svg"> </span> </div> </div> <div class="item_img"> <img alt="" src="img/Layer_4.jpg"> </div> <span class="item_text"></span> <span class="item_text item_span">${price}</span> </div>';
+/**
+ * первая функция создаёт Класс контейнер, задаёт ему параметры
+ * затем через Container.prototype мы создаём в протатиме функцию которую потом можно будет наследовать
+ * для переопределения функции прототипа, вроде функции render, нужно сначала ее наследовать
+ */
 
-const renderProduct = items => {
-  let productHtml = items.map(productTemplate);
+function Container(id, className, tagName) {
+    this.id = id;
+    this.className = className;
+    this.tagName = tagName;
+}
 
-  document.querySelector('#catalog-item').innerHTML = productHtml;
+Container.prototype.remove = function () {
+
 };
 
-renderProduct(productList);
+
+Container.prototype.render = function () {
+    return `<${this.tagName} class="${this.className}" id="${this.id}"></${this.tagName}>`;
+};
+
+function Menu(id, className, items) {
+    Container.call(this, id, className, 'ul');
+
+    this.items = items;
+}
+
+Menu.prototype = Object.create(Container.prototype);
+Menu.prototype.render = function () {
+
+};
+
+function SuperMenu(id, className, items) {
+    Menu.call(id, className, items);
+}
+
+// -----------------------------------------------------------
+
+class Container {
+    constructor(id, className, tagName) {
+        this.id = id;
+        this.className = className;
+        this.tagName = tagName;
+    }
+
+    render() {
+        return `<${this.tagName} class="${this.className}" id="${this.id}"></${this.tagName}>`;
+    }
+
+    sendRequest() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', this.url); // настройка запроса
+        xhr.send();
+
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                this.callback(JSON.parse(xhr.responseText));
+            }
+        }
+    }
+}
+
+
+class Menu extends Container {
+    constructor(id, className, items) {
+        super(id, className, 'ul');
+
+        this.items = items;
+    }
+
+    render() {
+        super.render();
+    }
+}
+
+function Basket(id, className, items) {
+    Container.call(this, id, className, items);
+    this.items = items;
+}
+
+Basket.prototype = Object.create(Container.prototype);
+
+Basket.prototype.render = function () {
+
+};
+
+class Item {
+    constructor(name, price, imgBig, imgSmall) {
+        this.name;
+        this.price;
+        this.imgBig;
+        this.imgSmall;
+    }
+
+    render() {
+        return `<div class="item_block"><div class="block_add"> <div class="add_item"> <span class="block_add_hover_text">Add to cart <img alt="" src= "img/add_img.svg"> </span> </div> </div> <div class="item_img"> <img alt="" src='${this.imgBig}'> </div> <span class="item_text"></span> <span class="item_text item_span">${price}</span> </div>'`
+    }
+}
+
+class ProductList extends Container {
+    constructor() {
+        this.items = [];
+    }
+
+    fetchItems(callback) {
+        super.sendRequest(`$(API_URL)/db.json`, (items) => {
+            this.items = goods.map(item => new Item(goods.name, goods.price));
+            callback;
+        })
+    }
+}
+
+class Basket extends Container {
+    summ() {
+        return this.items.reduce((acc, items) => acc + items.price, 0);
+    };
+
+    render() {
+
+    }
+}
+
+
+/** нужен будет метод удаления
+ * метод проверки товара на существование в корзине
+ * метод изменения кол-во товара
+ * метод добавления товара
+ */
+
+
