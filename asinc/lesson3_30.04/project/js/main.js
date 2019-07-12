@@ -72,6 +72,16 @@ class ProductItem {
     addToBasket() {
         return basket.push(product);
     }
+    render_basket() {
+        return `<div class="basket">
+                <img src="${basket.img}" alt="${basket.product_name}">
+                <div class="desc">
+                    <h3>${basket.product_name}</h3>
+                    <p>${basket.price}</p>
+                    <button class="buy-btn">Купить</button>
+                </div>
+            </div>`
+    }
 }
 
 
