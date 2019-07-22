@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/c/C_Base.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/c/C_Controller.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/c/C_Page.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/c/C_User.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/v/v_edit.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/v/v_index.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/final_5/v/v_main.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/php_learn/phpL2/php2-05-src/mvc1/model/gallery.php" charset="windows-1251" />
+  </component>
+</project>
