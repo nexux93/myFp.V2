@@ -23,6 +23,8 @@
 	<div id="menu">
 		<a href="index.php">Читать текст</a> |
 		<a href="index.php?c=page&act=edit">Редактировать текст</a>
+		<a href="index.php?c=user&act=login">Вход</a>
+        <a href="index.php?c=user&act=reg">Регистрация</a>
 	</div>
 	
 	<div id="content">
